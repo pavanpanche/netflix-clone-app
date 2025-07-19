@@ -54,32 +54,29 @@ mvn spring-boot:run
 
 -- 
 
- API Documentation
-Authentication
-Endpoint
+## API Documentation
+#### Authentication
+######Endpoint
 
-Method
+- Login
+  
+  ```http
+  
+  POST /api/auth/login
+Content-Type: application/json
 
-Description
+ {
+   "email": "user@example.com",
+   "password": "password123"
+ }
 
-/api/auth/login
 
-POST
-
-User login (JWT generation)
-
-/api/auth/register
-
-POST
-
-New user registration
-
-/api/auth/refresh
-
-POST
-
-Refresh JWT token
-
+- Response
+  {
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+   "email": "user@example.com",
+   "roles": ["USER"]
+  }
 ---
 
 ```
@@ -96,4 +93,13 @@ src/
 │   │       ├── security/       # Security configuration
 │   │       └── service/        # Business logic
 │   └── resources/              # Configuration files
+```
+
+```
+## Customization
+- **Contact Information**: pavanpanche2@gmail.com.
+- **License**: If you have a specific license file, ensure it is included in your repository.
+- **Additional Features**: Feel free to add any additional features or sections that are relevant to your project.
+
+This README provides a clear overview of your project, its features, and how to set it up, making it easier for others to understand and contribute to your work.
 ```
